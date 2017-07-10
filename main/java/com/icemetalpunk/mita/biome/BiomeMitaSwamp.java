@@ -15,17 +15,18 @@ public class BiomeMitaSwamp extends BiomeSwamp {
 		this.setRegistryName("minecraft", "swampland");
 	}
 
+	// FIXME: Leaves "random" patches of water in swamps uncovered; why?
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int j, int i, double noiseVal) {
 		super.genTerrainBlocks(worldIn, rand, chunkPrimerIn, j, i, noiseVal);
 		int x = j & 15;
 		int z = i & 15;
 		for (int y = 255; y >= 0; --y) {
-			boolean isWater = (chunkPrimerIn.getBlockState(x, y, z).getMaterial() == Material.WATER);
-			boolean isAir = (chunkPrimerIn.getBlockState(x, y, z).getMaterial() == Material.AIR);
-			boolean isUpAir = (chunkPrimerIn.getBlockState(x, y + 1, z).getMaterial() == Material.AIR);
+			Material mat = chunkPrimerIn.getBlockState(x, y, z).getMaterial();
+			boolean isWater = (mat == Material.WATER);
+			boolean isAir = (mat == Material.AIR);
 			if (!isAir) {
-				if (isUpAir && isWater) {
+				if (isWater) {
 					chunkPrimerIn.setBlockState(x, y + 1, z, Blocks.MAGMA.getDefaultState());
 				}
 				return;
