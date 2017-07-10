@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mita",
+  "name": "Magic in the Air",
+  "description": "A mod that adds gas-based magic to the game.",
+  "version": "0.1",
+  "mcversion": "1.12",
+  "url": "https://github.com/IceMetalPunk/MagicInTheAir",
+  "updateUrl": "",
+  "authorList": ["IceMetalPunk"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
