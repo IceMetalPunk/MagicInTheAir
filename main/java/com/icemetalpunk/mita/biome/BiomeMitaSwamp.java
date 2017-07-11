@@ -2,6 +2,7 @@ package com.icemetalpunk.mita.biome;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -19,6 +20,7 @@ public class BiomeMitaSwamp extends BiomeSwamp {
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int j, int i, double noiseVal) {
 		super.genTerrainBlocks(worldIn, rand, chunkPrimerIn, j, i, noiseVal);
+		Block p;
 		int x = j & 15;
 		int z = i & 15;
 		for (int y = 255; y >= 0; --y) {
